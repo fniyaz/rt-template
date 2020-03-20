@@ -6,7 +6,7 @@ class MaterialTriangle : public Triangle
 {
 public:
 	MaterialTriangle(Vertex a, Vertex b, Vertex c) : Triangle(a, b, c) { geo_normal = normalize(cross(ba, ca)); };
-	MaterialTriangle() { };
+	MaterialTriangle() : Triangle{} { };
 	virtual ~MaterialTriangle() {};
 
 	void SetEmisive(float3 emissive) { emissive_color = emissive; };
@@ -25,8 +25,8 @@ public:
 	float3 ambient_color;
 	float3 diffuse_color;
 	float3 specular_color;
-	float specular_exponent;
-	float ior;
+	float specular_exponent{};
+	float ior{};
 
 	bool reflectiveness = false;
 	bool reflectiveness_and_transparency = false;

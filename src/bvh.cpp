@@ -50,12 +50,14 @@ Payload BVH::TraceRay(const Ray& ray, const unsigned int max_raytrace_depth) con
             if (!mesh.AABBTest(ray))
                 continue;
 
-            for (auto &obj: mesh.Triangles()) {
+            for (auto const &obj: mesh.Triangles()) {
                 auto data = obj.Intersect(ray);
                 if (data.t <= close_t && data.t >= t_min) {
                     close_t = data.t;
                     closest_data = data;
-                    closest = &obj;
+                    if (closest != nullptr)
+                        delete closest;
+                    closest = new MaterialTriangle{ obj };
                 }
             }
         }
@@ -78,8 +80,9 @@ float BVH::TraceShadowRay(const Ray& ray, const float max_t) const
             if (!mesh.AABBTest(ray))
                 continue;
 
-            for (auto &obj: mesh.Triangles()) {
+            for (auto const &obj: mesh.Triangles()) {
                 auto data = obj.Intersect(ray);
+
                 if (data.t <= max_t && data.t >= t_min) {
                     return data.t;
                 }
