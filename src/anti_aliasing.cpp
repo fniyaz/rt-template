@@ -23,6 +23,5 @@ void AntiAliasing::DrawScene()
 
             SetPixel(x, y, (payload0 + payload1 + payload2 + payload3) / 4);
         }
-        std::cout << x << std::endl;
     }
 }
