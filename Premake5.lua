@@ -320,3 +320,29 @@ group "10. Denoising"
       includedirs { "src" }
       links "Denoising lib"
       files { "src/denoising_main.cpp" }
+
+group "11. MyScene"
+   project "MyScene lib"
+      kind "StaticLib"
+      includedirs { "lib/stb" }
+      includedirs { "lib/linalg" }
+      includedirs { "lib/tinyobjloader" }
+      includedirs { "src/" }
+      files {"src/MyScene.h", "src/MyScene.cpp" }
+      files {"src/ray_generation.h", "src/ray_generation.cpp" }
+      files {"src/mt_algorithm.h", "src/mt_algorithm.cpp"}
+      files {"src/lighting.h", "src/lighting.cpp"}
+      files {"src/shadow_rays.h", "src/shadow_rays.cpp"}
+      files {"src/reflection.h", "src/reflection.cpp"}
+      files {"src/refraction.h", "src/refraction.cpp"}
+      files {"src/anti_aliasing.h", "src/anti_aliasing.cpp"}
+      files {"src/aabb.h", "src/aabb.cpp"}
+      files {"src/bvh.h", "src/bvh.cpp"}
+      files {"src/denoising.h", "src/denoising.cpp"}
+
+   project "Denoising app"
+      kind "ConsoleApp"
+      includedirs { "lib/linalg" }
+      includedirs { "src" }
+      links "Denoising lib"
+      files { "src/MyScene.cpp" }

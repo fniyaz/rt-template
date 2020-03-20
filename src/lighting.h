@@ -17,7 +17,7 @@ public:
 	void SetReflectivenessAndTransparency(bool reflective_and_transparent) { reflectiveness_and_transparency = reflective_and_transparent; };
 	void SetIor(float in_ior) { ior = in_ior; };
 
-	float3 GetNormal(float3 barycentric) const;
+	virtual float3 GetNormal(float3 barycentric) const;
 
 	float3 geo_normal;
 
