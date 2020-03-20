@@ -3,6 +3,9 @@
 bin/
 obj/
 results/
+.idea/*
+CMakeLists.txt
+cmake-build-debug/*
 
 *.sln
 *.vcxproj
