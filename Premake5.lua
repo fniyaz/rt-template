@@ -340,9 +340,9 @@ group "11. MyScene"
       files {"src/bvh.h", "src/bvh.cpp"}
       files {"src/denoising.h", "src/denoising.cpp"}
 
-   project "Denoising app"
+   project "MyScene app"
       kind "ConsoleApp"
       includedirs { "lib/linalg" }
       includedirs { "src" }
-      links "Denoising lib"
+      links "MyScene lib"
       files { "src/MyScene.cpp" }

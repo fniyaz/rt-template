@@ -24,7 +24,7 @@ public:
 
             if (r.direction.x < 0)
                 xr = (1 - std::abs(r.direction.z));
-            return Payload{{1.f * xr * yr, 0.3 * xr * yr, 0}};
+            return Payload{float3{1.f * xr * yr, 0.3f * xr * yr, 0}};
         }
 
 

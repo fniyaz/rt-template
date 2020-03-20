@@ -3,6 +3,7 @@
 //
 
 #include "MyScene.h"
+#include <cmath>
 
 int main() {
     MyScene *render = new MyScene(1920, 1080);
@@ -44,7 +45,7 @@ int MyScene::LoadGeometry(std::string filename) {
 
 
     for (int a = 0; a < 360; a += 45) {
-        float angle = M_PI * a / 180.f;
+        float angle = static_cast<float>(3.14159265358979323846) * a / 180.f;
 
         float3 c{0, 0, 5};
         float r = 3;
