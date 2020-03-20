@@ -25,6 +25,8 @@ class Payload
 {
 public:
 	Payload() { color = float3{ 0, 0, 0 };};
+	explicit Payload(float3 color): color{color} {};
+
 	~Payload() {};
 	float3 color;
 };
